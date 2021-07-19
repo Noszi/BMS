@@ -1,0 +1,254 @@
+*{
+    margin:0;
+}
+html,body{
+    height: 100%;
+}
+h2 span {
+    background-color:#ee592e;
+    padding-left:80px;
+    padding-right: 30px;
+    font-size: 80px;
+    text-align: left;
+}
+h3{
+    font-size: 80px;
+    color:white;
+}
+
+p{
+    margin-bottom: 20px;
+}
+/*navigation bar or menu on the top of site,its fixed*/
+nav {
+    position:fixed;
+    width: 100%;
+    height: 41px;
+    background-color:rgba(0,0,0,.5);
+    z-index: 99;
+    text-align: center;
+
+}
+nav a{
+    text-decoration: none;
+    color:orange;
+    margin-left: 30px;
+    line-height: 50px;
+}
+
+/*we ussed section for the fixed pages*/
+.sect{
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 40px;
+}
+/*subsection is the black line between the pages*/
+.subSection{
+    width: 100%;
+    height: 10%;
+    background-color:black;
+    color:white;
+}
+/*subsection1 is used as the last black line,we used bigger here because of the social links*/
+.subSection1{
+    width: 100%;
+    height: 20%;
+    background-color:black;
+    color:white;
+}
+
+.sectOne img{
+    background-attachment: fixed;
+}
+/*slider on the main page*/
+.mySlides{
+    height:100vh;
+    width: 100%;
+}
+/*the images of every page*/
+.sectTwo{
+    background-image:url("../images/cup-of-coffee-1280537_1920.jpg");
+}
+.sectThree {
+    background-image: url("../images/background-2462431_1920.jpg");
+}
+.sectFour{
+    background-image:url("../images/startup-593327_1920.jpg");
+}
+.sectJobs{
+    background-image:url("../images/startup-593327_1920.jpg");
+}
+.sectAdmin {
+    background-image:url("../images/startup-593327_1920.jpg");
+    text-align: center;
+    padding-top: 20%;
+}
+.bord{
+    width: 500px;
+    height: 450px;
+    text-align: center;
+    background-color: rgba(44,62,80,0.7);
+    border-radius: 04px;
+    margin: 0 auto;
+}
+#log{
+    background-color: #ee592e;
+    border:2px solid black;
+    height: 60px;
+
+}
+p {
+    overflow-wrap: break-word;
+    font-size: 30px;
+    padding-left: 22%;
+    padding-right:35%;
+    color:white;
+    position: absolute;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.icons{
+    height: 80px;
+    width: 30px;
+    vertical-align: middle;
+}
+/*the about us page where we edited our images*/
+.Szabi {
+    font-size: 20px;
+    float: right;
+    padding-right: 250px;
+    width: 250px;
+    height: 200px;
+    padding-top: 85px;
+}
+.Noszi{
+    padding-top: 85px;
+    float:left;
+    width: 250px;
+    height: 200px;
+    padding-left: 270px;
+    font-size: 20px;
+}
+ul{list-style: none;}
+input,textarea{
+    width: 300px;
+    height: 35px;
+    margin-bottom: 5px;
+    border:2px solid black;
+}
+#button{
+    background-color: #ee592e;
+    border:2px solid black;
+}
+textarea{
+    height: 100px;
+    resize: vertical;
+}
+.contact{
+    text-align: center;
+    padding-top: 10%;
+}
+.social{
+    text-align: center;
+}
+.social p{
+    padding-left:41%;
+    font-size: 15px;
+}
+.social ul{
+    list-style: none;
+    display: flex;
+    padding-left:42%;
+}
+.social ul li{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 80px;
+    padding: 10px;
+    background: #fff;
+    font-size: 45px;
+    margin: 10px;
+}
+.facebook a{
+    color: #365899 ;
+}
+.facebook:hover{
+    background: #365899 ;
+    color: #fff;
+}
+.facebook:hover a{
+    color: #fff;
+}
+.instagram a{
+    color: #e4405f;
+}
+.instagram:hover {
+    background: #e4405f ;
+    color: #fff;
+}
+.instagram:hover a{
+    color: #fff;
+}
+.twitter a{
+    color: #1DA1F2;
+}
+.twitter:hover{
+    background: #1DA1F2 ;
+    color: #fff;
+}
+.twitter:hover a{
+    color: #fff;
+}
+.login{
+    padding-right: 50px;
+    float:right;
+    color:white;
+}
+
+.WelcomeText{
+    text-align: right;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 2;
+    font-size: 50px;
+    color: #fff;
+}
+h1 span {
+    background-color:#000;
+    padding-left:40px;
+    padding-right: 40px;
+    font-size: 80px;
+    text-align: left;
+}
+#edittd {
+    width: 20px;
+    height: 20px;
+}
+#deleted{
+    width: 20px;
+    height: 20px;
+}
+.thth{
+    text-align: left;
+
+}
+.space{
+    width:350px;
+}
+
+.A99{
+width:40%;
+float:left;
+color: black;
+}
+.A91{
+    width: 60%;
+    float:right;
+    color: black;
+}

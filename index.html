@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Hack</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <meta name="description" content="Web design companys">
+    <meta name="keywords" content="HTML,CSS,PHP,MYSQL">
+    <meta name="author" content="Noszkovity Daniel , Takacs Szabolcs">
+    <meta name="robots" CONTENT="NOINDEX, NOFOLLOW">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+<!--navigation bar-->
+<nav>
+    <div class="login"><a href="admin.php">ADMIN</a></div>
+    <a id="main2" href="#">Main</a>
+    <a id="company2" href="#">Company</a>
+    <a id="about2" href="#">About us</a>
+    <a id="contact2" href="#">Hire us</a>
+    <a href="Jobs.php">Jobs</a>
+</nav>
+
+
+
+<!--main page slider-->
+<div class="sectOne" id="main" >
+    <div class="slider">
+        <div class="WelcomeText"><h1><span>BMS</span></h1></div>
+        <img class="mySlides" src="pexels-photo-109371.jpeg">
+        <img class="mySlides" src="code.jpg" >
+        <img class="mySlides" src="pexels-photo-454507.jpeg" >
+        <img class="mySlides" src="programmer.png">
+        <img class="mySlides" src="pexels-photo-461039.jpeg" >
+    </div>
+<!--smooth scrolling to the anchors-->
+    <script>
+        var slideIndex = 0;
+        carousel();
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {slideIndex = 1}
+            x[slideIndex-1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+    </script>
+</div>
+
+<!--the black separator between two "pages"-->
+<div class="subSection"></div>
+
+<!--company page-->
+<div class="sect sectTwo" id="company"><h2><span>Company</span></h2><br/><br/>
+    <p>We are a small developer company in Serbia. We work closely in a little office in Subotica, where our work are made with a lot of care.Our works are made in C,C++,C# and Java.
+        We both are working on web developing. We are working in  HTML,CSS,PHP ,JQUERY and Javascript. And we use SQL for databases </p>
+</div>
+
+<!--the black separator between two "pages"-->
+<div class="subSection"></div>
+
+<!--our developers page, where we write stuffs about them-->
+<div class="sect sectThree" id="about"><h2><span>About us</span></h2>
+    <div class="Noszi">
+        <img src="noszi.jpg">
+        <table class="firstTable" id="employee_table">
+            <tr class="trtr1">
+                <tr class="trtr2">    
+                <th class="thth" ><div class="space"> <div class="A99">Name:</div> <div class="A91">Noszkovity Daniel</div> </div>     </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Gender:</div> <div class="A91">Male</div> </div>     </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Designation:</div> <div class="A91">Web programmer</div> </div> </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Working:</div> <div class="A91">Unemployed</div> </div>  </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Age:</div> <div class="A91">23</div> </div>       </th>
+                </tr>
+            </tr>
+        </table>
+    </div>
+    <div class="Szabi">
+        <img src="szabi.jpg">
+        <table class="secondTable" id="employee1_table">
+        <tr class="trtr1">
+                <tr class="trtr2">    
+                <th class="thth" ><div class="space"> <div class="A99">Name:</div> <div class="A91">Takacs Szabolcs</div> </div>     </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Gender:</div> <div class="A91">Male</div> </div>     </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Designation:</div> <div class="A91">Designer</div> </div> </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Working:</div> <div class="A91">Unknown</div> </div>  </th>
+                </tr>
+                <tr class="trtr2">
+                <th class="thth"><div class="space"> <div class="A99">Age:</div> <div class="A91">24</div> </div>       </th>
+                </tr>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Employee -->
+<script>
+    $(document).ready(function () {
+        $.getJSON("employee.json", function (data) {
+            var employee_data = '';
+            $.each(data,function (key, value) {
+                employee_data += '<tr>';
+                employee_data += '<td>'+value.name+'</td>';
+                employee_data += '<td>'+value.gender+'</td>';
+                employee_data += '<td>'+value.designation+'</td>';
+                employee_data += '<td>'+value.working+'</td>';
+                employee_data += '<td>'+value.age+'</td>';
+                employee_data += '</tr>';
+            });
+            $('#employee_table').append(employee_data);
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.getJSON("employee1.json", function (data) {
+            var employee_data = '';
+            $.each(data,function (key, value) {
+                employee_data += '<tr>';
+                employee_data += '<td>'+value.name+'</td>';
+                employee_data += '<td>'+value.gender+'</td>';
+                employee_data += '<td>'+value.designation+'</td>';
+                employee_data += '<td>'+value.working+'</td>';
+                employee_data += '<td>'+value.age+'</td>';
+                employee_data += '</tr>';
+            });
+            $('#employee1_table').append(employee_data);
+        });
+    });
+</script>
+
+
+
+
+<!--the black separator between two "pages"-->
+<div class="subSection"></div>
+
+<!--the contact page-->
+<div class="sect sectFour" id="contact"><h2><span>Contact</span></h2>
+
+    <div class="contact">
+        <form name="contactform" method="post" action="index.php" onsubmit="return openWindowAndChangeColors()"> <br/>
+            <input type="text" name="username" id="a" placeholder="Name..." required onblur="check(this)" onfocus="change(this)"><br/>
+            <input type="email" name="email" id="b" placeholder="Email..." required onblur="check(this)" onfocus="change(this)"><br/>
+            <textarea name="text" id="c" placeholder="Message..." required onblur="check(this)" onfocus="change(this)"></textarea><br/>
+            <input type="submit" id="button" name="submit" value="Send"><br/>
+            <input type="reset" id="button" name="reset" value="Reset">
+        </form>
+    </div>
+</div>
+<!-- alert -->
+<script>
+    var bgcolor = ["00","00","00"];
+    var color = ["ff","ff","ff"];
+    window.addEventListener("load",function () {
+        document.body.style.backgroundColor ="#" +bgcolor.join('');
+        document.body.style.color="#"+color.join('');
+    });
+    function change(input) {
+        input.style.backgroundColor = "yellow";
+    }
+    function  check(input) {
+        input.style.backgroundColor = "white";
+        errmsg = "";
+        console.log(input);
+        if(input.value == ""){
+            errmsg += "It's empty \n";
+            input.style.color = "red";
+        }
+        if(errmsg == ""){
+            input.style.color = "";
+            input.style.backgroundColor = "green";
+        }
+        else
+            alert(errmsg);
+    }
+    function openWindowAndChangeColors() {
+        if(errmsg == ""){
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var c = parseInt(document.getElementById('c').value);
+            window.open("","","width=300px,height=300px").document.write(result);
+        }
+        return false
+    }
+    </script>
+
+<!--the last separator wasnt exactly the same as the others-->
+<div class="subSection1" >
+
+<!--our social bar-->
+    <div class="social">
+        <ul>
+            <li class="facebook"><a href="https://www.facebook.com/noszkovic.daniel" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/xnoszix/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li class="twitter"><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+        <p>Hackerman @ 2018 copyright.All rights reserved.</p>
+    </div>
+</div>
+<!--smooth scrolling 2-->
+<script>
+    $(document).ready(function () {
+        $("#main2").click(function(){
+            $("html, body").animate({
+                scrollTop: $("#main").offset().top
+            }, "slow");
+        });
+        $("#company2").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#company").offset().top
+            }, "slow");
+        });
+        $("#about2").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#about").offset().top
+            }, "slow");
+        });
+        $("#contact2").click(function(){
+            $('html, body').animate({
+                scrollTop: $("#contact").offset().top
+            }, "slow");
+        });
+    });
+</script>
+</body>
+<!--   <?php
+if(isset($_POST['email'])) {
+    $email_to = "szabitakac97@gmail.com";
+    $email_subject = "Your email subject line";
+
+    function died($error) {
+        die();
+    }
+
+    if(!isset($_POST['username']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['text'])) {
+        died('');
+    }
+
+
+
+    $first_name = $_POST['username']; // required
+    $email_from = $_POST['email']; // required
+    $comments = $_POST['text']; // required
+
+    $error_message = "message fail";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+    if(!preg_match($email_exp,$email_from)) {
+        $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+    }
+
+    $string_exp = "/^[A-Za-z .'-]+$/";
+
+    if(!preg_match($string_exp,$first_name)) {
+        $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+    }
+
+    if(strlen($comments) < 2) {
+        $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+    }
+
+    if(strlen($error_message) > 0) {
+        died($error_message);
+    }
+
+    $email_message = "Form details below.\n\n";
+
+
+    function clean_string($string) {
+        $bad = array("content-type","bcc:","to:","cc:","href");
+        return str_replace($bad,"",$string);
+    }
+
+
+
+    $email_message .= "Name ".clean_string($first_name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Comments: ".clean_string($comments)."\n";
+
+    $headers = 'From: '.$email_from."\r\n".
+        'Reply-To: '.$email_from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    @mail($email_to, $email_subject, $email_message, $headers);
+}
+?>
+
+-->
+</html>
+
+

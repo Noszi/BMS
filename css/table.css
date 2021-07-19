@@ -1,0 +1,36 @@
+/*the whole table css is for the tables what we used in the jobs and admin section*/
+table{
+    width: 60%;
+    align-content: center;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: #ee592e;
+    margin-top:50px;
+    border: 1px solid black;
+}
+/*every second row will be displayed on a different background color*/
+tr:nth-child(even) {background-color: #fe6231;}
+/*we added some hover effect*/
+tr:hover {background-color: whitesmoke;}
+th, td{
+    border-bottom: 1px solid black;
+    padding: 8px;
+}
+.tabel{
+    margin-left: 20%;
+}
+.createt{
+    background-color: #ee592e;
+}
+.addbtn{
+    background-color: #fe6231;
+    margin-left: 30px;
+}
+label{
+    color: white;
+}
+/*small class is for the images that we use in the table*/
+.small{
+    width: 50px;
+    height: 50px;
+}
